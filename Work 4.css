@@ -1,0 +1,252 @@
+/* =====================
+   CSS VARIABLES
+===================== */
+
+:root {
+  --bg-color: #ffffff;
+  --text-color: #222;
+  --primary-color: #4f46e5;
+  --secondary-color: #f5f5f5;
+  --card-bg: #ffffff;
+  --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+  --transition: all 0.3s ease;
+}
+
+.dark-theme {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+  --secondary-color: #1f1f1f;
+  --card-bg: #222;
+  --shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+}
+
+/* =====================
+   RESET
+===================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: var(--transition);
+}
+
+/* =====================
+   HEADER
+===================== */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1rem 5%;
+  background: var(--secondary-color);
+
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.navbar {
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: var(--text-color);
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  color: var(--primary-color);
+}
+
+#themeToggle {
+  border: none;
+  background: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+/* =====================
+   HERO SECTION
+===================== */
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+
+  padding: 4rem 5%;
+  align-items: center;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+}
+
+.hero-content span {
+  color: var(--primary-color);
+}
+
+.hero-content p {
+  margin: 1rem 0;
+}
+
+.hero-image img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+
+/* =====================
+   BUTTON
+===================== */
+
+.btn {
+  padding: 0.8rem 1.5rem;
+  border: none;
+
+  background: var(--primary-color);
+  color: white;
+
+  border-radius: 10px;
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+/* =====================
+   ABOUT
+===================== */
+
+.about {
+  padding: 4rem 5%;
+  text-align: center;
+}
+
+.about h2 {
+  margin-bottom: 1rem;
+}
+
+/* =====================
+   PROJECTS
+===================== */
+
+.projects {
+  padding: 4rem 5%;
+}
+
+.projects h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.card {
+  background: var(--card-bg);
+  padding: 1.5rem;
+
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+/* =====================
+   CONTACT
+===================== */
+
+.contact {
+  text-align: center;
+  padding: 4rem 5%;
+}
+
+/* =====================
+   TABLET
+===================== */
+
+@media (min-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+}
+
+/* =====================
+   DESKTOP
+===================== */
+
+@media (min-width: 1024px) {
+  .project-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .hero-content h1 {
+    font-size: 4rem;
+  }
+
+  .hero {
+    min-height: 90vh;
+  }
+}
+
+/* =====================
+   ANIMATIONS
+===================== */
+
+.hero-content,
+.hero-image,
+.card {
+  animation: fadeUp 1s ease;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

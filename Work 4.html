@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="Work 4.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="logo">My Portfolio</div>
+
+      <nav class="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button id="themeToggle">🌙</button>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-content">
+          <h1>Hello, I'm <span>Darkhsha Khatoon</span></h1>
+          <p>Frontend Developer | UI Designer | Freelancer</p>
+          <button class="btn">View Portfolio</button>
+        </div>
+
+        <div class="hero-image">
+          <img src="https://via.placeholder.com/400" alt="Profile" />
+        </div>
+      </section>
+
+      <section class="about" id="about">
+        <h2>About Me</h2>
+        <p>
+          Passionate web developer specializing in responsive websites using
+          HTML, CSS, JavaScript and modern frameworks.
+        </p>
+      </section>
+
+      <section class="projects" id="projects">
+        <h2>Projects</h2>
+
+        <div class="project-grid">
+          <div class="card">
+            <h3>Portfolio Website</h3>
+            <p>Responsive personal portfolio using Grid and Flexbox.</p>
+          </div>
+
+          <div class="card">
+            <h3>E-Commerce UI</h3>
+            <p>Modern shopping interface with responsive design.</p>
+          </div>
+
+          <div class="card">
+            <h3>Dashboard</h3>
+            <p>Interactive admin dashboard with analytics.</p>
+          </div>
+
+          <div class="card">
+            <h3>Blog Platform</h3>
+            <p>Content management and responsive blog layout.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact" id="contact">
+        <h2>Contact Me</h2>
+        <button class="btn">Get In Touch</button>
+      </section>
+    </main>
+
+    <script>
+      const toggle = document.getElementById("themeToggle");
+
+      toggle.addEventListener("click", () => {
+        document.body.classList.toggle("dark-theme");
+
+        toggle.textContent = document.body.classList.contains("dark-theme")
+          ? "☀️"
+          : "🌙";
+      });
+    </script>
+  </body>
+</html>
